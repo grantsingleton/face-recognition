@@ -18,3 +18,6 @@ In order to access a computers webcam through the browser, I added a div in the 
 ```
 When the meta data is loaded, the onPLay function in webcamRecognition.js script is executed. this is the script that I wrote to implement the face recognition API. 
 
+### webcamRecognition.js
+
+
