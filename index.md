@@ -20,7 +20,7 @@ When the meta data is loaded, the onPLay function in webcamRecognition.js script
 
 ### webcamRecognition.js
 
-When the web page is loaded, the folling script serves as the entry point to the webcamRecognition.js script where the facial recognition models will be loaded and then used. 
+When the web page is loaded, the following script serves as the entry point to the webcamRecognition.js function run(), where the facial recognition models will be loaded and then used. 
 ```javascript
 $(document).ready(function() 
 {
@@ -30,7 +30,7 @@ $(document).ready(function()
 })
 ```
 
-The run function sets everyting up for the face recognition AI to work. It begins by loading the models. 
+The run function sets everything up for the face recognition AI to work. It begins by loading the models. 
 ```javascript
 // change to tiny face detector for faster rendering
 await changeFaceDetector(TINY_FACE_DETECTOR);
@@ -49,7 +49,7 @@ const stream = await navigator.mediaDevices.getUserMedia({ video: {} })
 const videoEl = $('#inputVideo').get(0);
 videoEl.srcObject = stream;
 ```
-I then build the reference data, which is the photos that will be used for comparison with the target face. Once the models are loaded and the reference data is processed the onPlay function starts looking for faces in the video. The first action executed in the onPLay function is accessing the video element. That is performed using the following line:
+I then build the reference data, which is the photos that will be used for comparison with the target face. Once the models are loaded and the reference data is processed, the onPlay function starts looking for faces in the video. The first action executed in the onPLay function is accessing the video element. That is performed using the following line:
 ```javascript
 const videoEl = $('#inputVideo').get(0);
 ```
@@ -80,7 +80,7 @@ I then display the mood on the webpage. I use an XMLHttpRequest to retrieve the 
 function updateMood(mood)
 {
       // get the url parts for mood
-      var begin_url = "http://127.0.0.1:8887/moods/";
+      var begin_url = "./moods/";
       var file_type = ".txt";
         
        // build mood url
