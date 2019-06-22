@@ -141,3 +141,10 @@ Finally, this process repeats indefinately.
 setTimeout(() => onPlay());
 ```
 You can check out the full webcamRecognition.js script on Github [here](https://github.com/grantsingleton/face-recognition/blob/master/webcamRecognition.js).
+
+## Demo
+
+Try it out yourself! I have the web page online [here](https://grantsingleton.github.io/face-api.js/). Note that you must give the browser permission to access your webcam. It should ask you permission but your anti-malware may block the request (just disable the webcam protection setting on your malware and refresh the page). Also, since I don't have your picture in the database it will identify you as 'unknown customer', but it will still identify what expression is on your face. Try smiling, acting surprised, etc. Also, I have programmed it to recognize a recent photo of Mark Hamill ('Luke Skywalker') so you can google a picture of Mark Hamill on your phone and hold it in front of the webcam to see it identify a person. 
+
+## Future Improvements
+In order to make this better, I would use React to update the html with the customer info and mood. I would aso implement a customer database on a server so that users could add photos which would then be identified by the camera. 
