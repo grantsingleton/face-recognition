@@ -140,3 +140,4 @@ Finally, this process repeats indefinately.
 ```javascript
 setTimeout(() => onPlay());
 ```
+You can check out the full webcamRecognition.js script on Github [here](https://github.com/grantsingleton/face-recognition/blob/master/webcamRecognition.js).
