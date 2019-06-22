@@ -9,7 +9,7 @@ In this project, I run a facial recognition AI in Javascript, using the open-sou
 
 ## Implementation
 ### In the HTML
-In order to access a computers webcam through the browser, I added a div in the html for the video element to be placed. This is where the video will be displyed on the web page. A canvas element is added on top of the video element in order to draw boxes (or anything else) around the face that is detected.  
+I added a div in the html for the video element to be placed. This is where the video will be displyed on the web page. A canvas element is added on top of the video element in order to draw boxes (or anything else) around the face that is detected.  
 ```html
 <div style="position: relative" class="margin">
   <video onloadedmetadata="onPlay(this)" id="inputVideo" autoplay muted></video>
