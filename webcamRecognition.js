@@ -103,7 +103,7 @@ async function onPlay()
 function updateMood(mood)
 {
       // get the url parts for mood
-      var begin_url = "http://127.0.0.1:8887/moods/";
+      var begin_url = "./moods/";
       var file_type = ".txt";
         
        // build mood url
@@ -127,10 +127,10 @@ function updateMood(mood)
 async function run() 
 {
         
-    const MODEL_URL = 'http://127.0.0.1:8887/weights';
+    const MODEL_URL = './weights';
         
       // change to tiny face detector for faster rendering
-      await changeFaceDetector(TINY_FACE_DETECTOR);
+      //await changeFaceDetector(TINY_FACE_DETECTOR);
         
       // load models
       await faceapi.loadFaceRecognitionModel(MODEL_URL);
@@ -155,7 +155,7 @@ async function run()
 async function buildReferenceData()
 {
         // Add Grant
-        const grant_img = await faceapi.fetchImage('http://127.0.0.1:8887/images/Grant.jpg')
+        const grant_img = await faceapi.fetchImage('./images/Grant.jpg')
         const results = await faceapi.detectSingleFace(grant_img, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptor();
         
         if (!results) 
@@ -164,38 +164,15 @@ async function buildReferenceData()
             return;
         }
         
+        // Add Mark
+        const mark_img = await faceapi.fetchImage('./images/Mark.jpg')
+        const results1 = await faceapi.detectSingleFace(mark_img, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptor();
         
-        // Add Krista
-        const krista_img = await faceapi.fetchImage('http://127.0.0.1:8887/images/Krista_1.jpg')
-        const results2 = await faceapi.detectSingleFace(krista_img, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptor();
-        
-        if (!results2) 
+        if (!results1) 
         {
             console.log("img detect failed");
             return;
         }
-        
-        
-        // Add Tarek
-        const tarek_img = await faceapi.fetchImage('http://127.0.0.1:8887/images/Tarek.jpg')
-        const results3 = await faceapi.detectSingleFace(tarek_img, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptor();
-        
-        if (!results3) 
-        {
-            console.log("img detect failed");
-            return;
-        }
-        
-        // Add Daniel
-        const daniel_img = await faceapi.fetchImage('http://127.0.0.1:8887/images/Daniel.jpg')
-        const results4 = await faceapi.detectSingleFace(daniel_img, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptor();
-        
-        if (!results4) 
-        {
-            console.log("img detect failed");
-            return;
-        }
-        
     
         // Associate names with faces
         const labeledDescriptors = [
@@ -204,16 +181,8 @@ async function buildReferenceData()
                     [results.descriptor]
                     ),
                 new faceapi.LabeledFaceDescriptors(
-                     "Krista Singleton",
-                     [results2.descriptor]
-                     ),
-                new faceapi.LabeledFaceDescriptors(
-                    "Tarek Adlouni",
-                    [results3.descriptor]
-                    ),
-                new faceapi.LabeledFaceDescriptors(
-                    "Daniel Patlovany",
-                    [results4.descriptor]
+                    "Luke Skywalker",
+                    [results1.descriptor]
                     )
             ]
         
@@ -224,7 +193,7 @@ async function buildReferenceData()
 function loadCustomerInfo(customer) 
 {
         // get the url parts for name
-        var begin_url = "http://127.0.0.1:8887/customers/";
+        var begin_url = "./customers/";
         var file_type = ".txt";
         var first_name = customer.split(" ", 1);
         
