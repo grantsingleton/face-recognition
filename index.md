@@ -7,6 +7,9 @@ In this project, I run a facial recognition AI in Javascript, using the open-sou
 * ECMAScript 6 (ES6)
 * [face-API.js](https://github.com/justadudewhohacks/face-api.js?files=1)
 
+## In Action
+![demo]()
+
 ## Implementation
 ### In the HTML
 I added a div in the html for the video element to be placed. This is where the video will be displyed on the web page. A canvas element is added on top of the video element in order to draw boxes (or anything else) around the face that is detected. I chose not to implement bounding boxes in my implementation since I prefer it that way (looks cleaner).    
