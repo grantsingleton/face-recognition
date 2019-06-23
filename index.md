@@ -8,7 +8,7 @@ In this project, I run a facial recognition AI in Javascript, using the open-sou
 * [face-API.js](https://github.com/justadudewhohacks/face-api.js?files=1)
 
 ## In Action
-![demo]()
+![demo](./demo.gif)
 
 ## Implementation
 ### In the HTML
