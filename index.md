@@ -142,11 +142,11 @@ if (vacant_redundancy_count > 40)
 }
 ```
 
-Finally, this process repeats indefinately.
+Finally, this process repeats indefinitely.
 ```javascript
 setTimeout(() => onPlay());
 ```
 You can check out the full webcamRecognition.js script on Github [here](https://github.com/grantsingleton/face-recognition/blob/master/webcamRecognition.js).
 
 ## Future Improvements
-In order to make this better, I would use React to update the html with the customer info and mood. I would aso implement a customer database on a server so that users could add photos which would then be identified by the camera. 
+In order to make this better, I would use React to update the html with the customer info and mood. I would aso implement a customer database on a server so that users could update the photo database.
